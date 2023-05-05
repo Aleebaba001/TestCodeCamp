@@ -14,6 +14,16 @@ public class SeleniumWebSignupTest {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://selenium-blog.herokuapp.com");
+
+        //Test 1: verify the user input the right url and is on the right webpage
+        if(driver.getCurrentUrl().contains("https://selenium-blog.herokuapp.com"))
+        //pass
+        System.out.println("Correct Webpage");
+
+        else
+        //fail
+        System.out.println("Wrong Webpage");
+
         Thread.sleep(5000);
         driver.manage().window().maximize();
         driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
@@ -22,9 +32,10 @@ public class SeleniumWebSignupTest {
 
     @Test (priority = 0)
     public void negativesignup() throws InterruptedException {
-            driver.findElement(By.id("user_username")).sendKeys("aleebaba11");
-            driver.findElement(By.id("user_email")).sendKeys("aleebaba11@gmailinator.com");
-            driver.findElement(By.id("user_password")).sendKeys("admin11");
+        //Test 2: verify that when user cannot signup with username less than 3 characters
+            driver.findElement(By.id("user_username")).sendKeys("ali");
+            driver.findElement(By.id("user_email")).sendKeys("aleebaba01@gmailinator.com");
+            driver.findElement(By.id("user_password")).sendKeys("admin01");
             driver.findElement(By.id("submit")).click();
             Thread.sleep(5000);
     }
@@ -32,6 +43,16 @@ public class SeleniumWebSignupTest {
     @Test (priority = 1)
     public void clickUser1Item() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/ul/div/div/li[1]/a")).click();
+        //Test 3: verify that when user clicks on signip button, the user is directed to signup page
+        String expectedurl = "https://selenium-blog.herokuapp.com";
+        String actualurl = driver.getCurrentUrl();
+                if(actualurl.contains(expectedurl))
+                    //pass
+                    System.out.println("Correct Webpage");
+
+                else
+                    //fail
+                    System.out.println("Wrong Webpage");
         Thread.sleep(5000);
     }
 
