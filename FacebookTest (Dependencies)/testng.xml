@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="/Users/aliyumuhammed/Downloads/TestCodeCamp/FacebookTest/FacebookTest"><classes/>
-    </test>
-</suite>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+    <test thread-count="5" name="FacebookTest">
+        <classes>
+            <class name="SeleniumWebSignupTest">
+                <methods>
+                    <include name="start"/>
+                    <include name="negativesignup"/>
+                    <include name="clickUser1Item"/>
+                    <include name="verifyItem"/>
+
+                </methods>
+            </class> <!-- SeleniumWebSignupTest -->
+        </classes>
+    </test> <!-- FacebookTest -->
+</suite> <!-- Default Suite -->
