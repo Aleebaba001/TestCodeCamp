@@ -41,35 +41,25 @@ public class SeleniumWebSignupTest {
     }
 
     @Test (priority = 0)
-<<<<<<< HEAD
     public void positivesignup() throws InterruptedException {
         //Test 2: verify that the user can signup with valid details
 
         //5. locate the username field and enter a username
-        driver.findElement(By.id("user_username")).sendKeys("aleebaba9000");
+        driver.findElement(By.id("user_username")).sendKeys("aleebaba9055");
         //6. locate the email field and enter an email
-        driver.findElement(By.id("user_email")).sendKeys("aleebaba9000@gmailinator.com");
+        driver.findElement(By.id("user_email")).sendKeys("aleebaba9055@gmailinator.com");
         //7. locate the password field and enter a password
-        driver.findElement(By.id("user_password")).sendKeys("admin9000");
+        driver.findElement(By.id("user_password")).sendKeys("admin9055");
         //8. click on the signup button
         driver.findElement(By.id("submit")).click();
         Thread.sleep(5000);
-=======
-    public void negativesignup() throws InterruptedException {
-        //Test 2: verify that when user cannot signup with username less than 3 characters
-            driver.findElement(By.id("user_username")).sendKeys("ali");
-            driver.findElement(By.id("user_email")).sendKeys("aleebaba01@gmailinator.com");
-            driver.findElement(By.id("user_password")).sendKeys("admin01");
-            driver.findElement(By.id("submit")).click();
-            Thread.sleep(5000);
->>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
     }
 
     @Test (priority = 1)
     public void clickUser1Item() throws InterruptedException {
         //9. click on User1 item on the list page
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/ul/div/div/li[1]/a")).click();
-        //Test 3: verify that when user clicks on signip button, the user is directed to signup page
+        //Test 3: verify that when user clicks on signup button, the user is directed to signup page
         String expectedurl = "https://selenium-blog.herokuapp.com";
         String actualurl = driver.getCurrentUrl();
                 if(actualurl.contains(expectedurl))
@@ -84,7 +74,7 @@ public class SeleniumWebSignupTest {
 
     @Test (priority = 2)
             public void verifyItem() throws InterruptedException {
-        //Test 9: Search for an item (using python with selenium) and confirm it is present
+        //Test 4: Search for an item (using python with selenium) and confirm it is present
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div[1]/a")).click();
         Thread.sleep(5000);
         String expectedPageUrl = "https://selenium-blog.herokuapp.com/users/1";
@@ -102,7 +92,7 @@ public class SeleniumWebSignupTest {
     public void logoutsuccessfully() {
         //11. click on logout
         driver.findElement(By.xpath("//*[@id=\"bs-example-navbar-collapse-1\"]/ul/li[3]/a")).click();
-        //Test 10: verify that when a user logout, he/she is directed to the homepage
+        //Test 5: verify that when a user logout, he/she is directed to the homepage
         String expectedTitle = "AlphaBlog";
         String actualTitle = driver.getTitle();
         if(expectedTitle.contains(actualTitle))
@@ -118,7 +108,7 @@ public class SeleniumWebSignupTest {
 
     @Test (priority = 4)
     public void negativesignup() throws InterruptedException {
-        //Test 2: verify that the user cannot signup with username less than 3 characters
+        //Test 6: verify that the user cannot signup with username less than 3 characters
 
         //Click on the signup button to open the signup page
         driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
@@ -130,6 +120,94 @@ public class SeleniumWebSignupTest {
         driver.findElement(By.id("user_email")).sendKeys("aleebaba900@gmailinator.com");
         //7. locate the password field and enter a password
         driver.findElement(By.id("user_password")).sendKeys("admin900");
+        //8. click on the signup button
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(5000);
+    }
+
+    @Test (priority = 5)
+    public void negativesignup2() throws InterruptedException {
+        //Test 7: verify that the user cannot signup with username less than 3 characters
+
+        //Click on the logo to go back to the homepage
+        driver.findElement(By.xpath("//*[@id=\"logo\"]")).click();
+
+        //Click on the signup button to open the signup page
+        driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
+        Thread.sleep(5000);
+
+        //5. locate the username field and enter a username
+        driver.findElement(By.id("user_username")).sendKeys("aeebaba911");
+        //6. locate the email field and enter an email
+        driver.findElement(By.id("user_email")).sendKeys("aleebaba911-gmailinator.com");
+        //7. locate the password field and enter a password
+        driver.findElement(By.id("user_password")).sendKeys("admin911");
+        //8. click on the signup button
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(5000);
+    }
+
+    @Test (priority = 6)
+    public void negativesignup3() throws InterruptedException {
+        //Test 8: Verify that user cannot login with a password less than or equal to one character
+
+        //Click on the logo to go back to the homepage
+        driver.findElement(By.xpath("//*[@id=\"logo\"]")).click();
+
+        //Click on the signup button to open the signup page
+        driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
+        Thread.sleep(5000);
+
+        //5. locate the username field and enter a username
+        driver.findElement(By.id("user_username")).sendKeys("aeebaba911");
+        //6. locate the email field and enter an email
+        driver.findElement(By.id("user_email")).sendKeys("aleebaba911-gmailinator.com");
+        //7. locate the password field and enter a password
+        driver.findElement(By.id("user_password")).sendKeys("a");
+        //8. click on the signup button
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(5000);
+    }
+
+    @Test (priority = 7)
+    public void negativesignup4() throws InterruptedException {
+        //Test 9: Verify that user cannot signup with the username field blank
+
+        //Click on the logo to go back to the homepage
+        driver.findElement(By.xpath("//*[@id=\"logo\"]")).click();
+
+        //Click on the signup button to open the signup page
+        driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
+        Thread.sleep(5000);
+
+        //5. locate the username field and enter a username
+        driver.findElement(By.id("user_username")).sendKeys("");
+        //6. locate the email field and enter an email
+        driver.findElement(By.id("user_email")).sendKeys("aleebaba915@gmailinator.com");
+        //7. locate the password field and enter a password
+        driver.findElement(By.id("user_password")).sendKeys("admin915");
+        //8. click on the signup button
+        driver.findElement(By.id("submit")).click();
+        Thread.sleep(5000);
+    }
+
+    @Test (priority = 8)
+    public void negativesignup5() throws InterruptedException {
+        //Test 10: Verify that user cannot signup with the email field blank
+
+        //Click on the logo to go back to the homepage
+        driver.findElement(By.xpath("//*[@id=\"logo\"]")).click();
+
+        //Click on the signup button to open the signup page
+        driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
+        Thread.sleep(5000);
+
+        //5. locate the username field and enter a username
+        driver.findElement(By.id("user_username")).sendKeys("aleebaba916");
+        //6. locate the email field and enter an email
+        driver.findElement(By.id("user_email")).sendKeys("");
+        //7. locate the password field and enter a password
+        driver.findElement(By.id("user_password")).sendKeys("admin916");
         //8. click on the signup button
         driver.findElement(By.id("submit")).click();
         Thread.sleep(5000);
@@ -147,12 +225,12 @@ public class SeleniumWebSignupTest {
 /** Test Cases
 
  * 1. Verify that the user input the right URL and that he/she is on the right webpage
- * 2. Verify that when user clicks on the signup button, the user is directed to signup
+ * 2. Verify that when user clicks on the signup button, the user is directed to the signup page
  * 3. Verify that user cannot signup with username less than 3 characters
  * 4. Verify that user cannot signup with invalid email
  * 5. Verify that user cannot login with a password less than or equal to one character
  * 6. Verify that user cannot signup with either or all of the fields blank
- * 7. Verify that user is successfuly signed up when valid details are inputted
+ * 7. Verify that user is successfully signed up when valid details are inputted
  * 8. Verify that User1 item is present on the item list page
  * 9. Verify that item searched for on the User1 page is present
  * 10. Verify that when the user logout, he/she is directed back to the homepage
