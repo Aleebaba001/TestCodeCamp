@@ -7,11 +7,15 @@ import org.testng.annotations.Test;
 
 
 public class SeleniumWebSignupTest {
+<<<<<<< HEAD
     //import the selenium webdriver
+=======
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
     private WebDriver driver;
 
     @BeforeTest
     public void start() throws InterruptedException {
+<<<<<<< HEAD
         //locate where the chromedriver is
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
 
@@ -19,6 +23,10 @@ public class SeleniumWebSignupTest {
         driver = new ChromeDriver();
 
         //2. Input your Selenium Demo page URL (https://selenium-blog.herokuapp.com)
+=======
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        driver = new ChromeDriver();
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
         driver.get("https://selenium-blog.herokuapp.com");
 
         //Test 1: verify the user input the right url and is on the right webpage
@@ -31,16 +39,21 @@ public class SeleniumWebSignupTest {
         System.out.println("Wrong Webpage");
 
         Thread.sleep(5000);
+<<<<<<< HEAD
 
         //3. Maximize the browser
         driver.manage().window().maximize();
 
         //4. Click on the signup button to open the signup page
+=======
+        driver.manage().window().maximize();
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
         driver.findElement(By.xpath("/html/body/div[2]/div/a[2]")).click();
         Thread.sleep(5000);
     }
 
     @Test (priority = 0)
+<<<<<<< HEAD
     public void positivesignup() throws InterruptedException {
         //Test 2: verify that the user can signup with valid details
 
@@ -53,11 +66,23 @@ public class SeleniumWebSignupTest {
         //8. click on the signup button
         driver.findElement(By.id("submit")).click();
         Thread.sleep(5000);
+=======
+    public void negativesignup() throws InterruptedException {
+        //Test 2: verify that when user cannot signup with username less than 3 characters
+            driver.findElement(By.id("user_username")).sendKeys("ali");
+            driver.findElement(By.id("user_email")).sendKeys("aleebaba01@gmailinator.com");
+            driver.findElement(By.id("user_password")).sendKeys("admin01");
+            driver.findElement(By.id("submit")).click();
+            Thread.sleep(5000);
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
     }
 
     @Test (priority = 1)
     public void clickUser1Item() throws InterruptedException {
+<<<<<<< HEAD
         //9. click on User1 item on the list page
+=======
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/ul/div/div/li[1]/a")).click();
         //Test 3: verify that when user clicks on signip button, the user is directed to signup page
         String expectedurl = "https://selenium-blog.herokuapp.com";
@@ -74,6 +99,7 @@ public class SeleniumWebSignupTest {
 
     @Test (priority = 2)
             public void verifyItem() throws InterruptedException {
+<<<<<<< HEAD
         //Test 9: Search for an item (using python with selenium) and confirm it is present
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div[1]/a")).click();
         Thread.sleep(5000);
@@ -123,17 +149,27 @@ public class SeleniumWebSignupTest {
         //8. click on the signup button
         driver.findElement(By.id("submit")).click();
         Thread.sleep(5000);
+=======
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div[1]/a")).click();
+        Thread.sleep(5000);
+
+        driver.findElement(By.xpath("//*[@id=\"bs-example-navbar-collapse-1\"]/ul/li[3]/a")).click();
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
     }
 
     @AfterTest
     public void closeBrowser() {
+<<<<<<< HEAD
         //12. Close the browser
+=======
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
         driver.quit();
     }
 }
 
 
 
+<<<<<<< HEAD
 /** Test Cases
 
  * 1. Verify that the user input the right URL and that he/she is on the right webpage
@@ -153,3 +189,18 @@ public class SeleniumWebSignupTest {
 
 //10. Search for an item (Using Python with Selenium) and confirm it is present
 
+=======
+//locate where the chromedriver is
+//1. Open your chrome browser
+//2. Input your Selenium Demo page URL (https://selenium-blog.herokuapp.com)
+//3. Maximize the browser
+//4. Click on the signup button to open the signup page
+//5. Input your username in the username field
+//6. Input your email address in the email address field
+//7. Input your password in the password field
+//8. Click on the signup button
+//9. Click on User1 item on the list page
+//10. Search for an item (Using Python with Selenium) and confirm it is present
+//11. Click on logout
+//12. Close the browser
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f

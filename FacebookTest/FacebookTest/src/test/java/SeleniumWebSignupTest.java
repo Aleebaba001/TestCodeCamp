@@ -41,6 +41,7 @@ public class SeleniumWebSignupTest {
     }
 
     @Test (priority = 0)
+<<<<<<< HEAD
     public void positivesignup() throws InterruptedException {
         //Test 2: verify that the user can signup with valid details
 
@@ -53,6 +54,15 @@ public class SeleniumWebSignupTest {
         //8. click on the signup button
         driver.findElement(By.id("submit")).click();
         Thread.sleep(5000);
+=======
+    public void negativesignup() throws InterruptedException {
+        //Test 2: verify that when user cannot signup with username less than 3 characters
+            driver.findElement(By.id("user_username")).sendKeys("ali");
+            driver.findElement(By.id("user_email")).sendKeys("aleebaba01@gmailinator.com");
+            driver.findElement(By.id("user_password")).sendKeys("admin01");
+            driver.findElement(By.id("submit")).click();
+            Thread.sleep(5000);
+>>>>>>> 9484b7bdf230fcf4d2935cceb0599ed18286233f
     }
 
     @Test (priority = 1)
